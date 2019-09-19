@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=11">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title><%: Page.Title %> - PARTI Admin V.1</title>
+    <title><%: Page.Title %> - PARTI TIS V.1</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -23,7 +23,7 @@
     <link href="Content/hover-css/css/hover.css" rel="stylesheet" media="all" />
 
     <!-- JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
@@ -33,7 +33,7 @@
             Swal.fire({
                 type: actions,
                 title: 'ແຈ້ງເຕືອນ',
-                text: msgs,
+                html: msgs,
             }).then(result => {
                 if (result.value) {
                     if (currentPage != '') {
@@ -117,6 +117,11 @@
 
         body {
             font-family: PhetsarathOT;
+            background: url('img/bg2.png');
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         .input-field {
@@ -142,11 +147,75 @@
             font-family: PhetsarathOT;
         }
 
+        .preloader-background {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eee;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
     </style>
 
 </head>
 <body>
     <form id="frmMain" runat="server">
+        <%-- preloader --%>
+        <div class="preloader-background">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <%-- Navbar + Sidenav --%>
         <div>
             <%-- navbar --%>
@@ -155,12 +224,12 @@
                     <a data-target="mobile-demo" class="sidenav-trigger"><i class="large material-icons black-text">menu</i></a>
                     <p class="hide-on-large-only hide-on-extra-large-only black-text">ລະບົບຄຸ້ມຄອງຂໍ້ມຸນການຝຶກອົບຮົມ</p>
                     <ul class="hide-on-med-and-down">
-                        <li><a id="menu1" href="Main" class="waves-effect waves-light"><i class="small material-icons black-text">home</i></a></li>
-                        <li><a id="menu2" href="YearPlans" class="waves-effect waves-light black-text">ແຜນການຈັດຕັ້ງປະຕິບັດ</a></li>
-                        <li><a id="menu3" class="dropdown-trigger waves-effect waves-light right hvr-icon-hang black-text" data-target="dropdownTraining">ການຈັດຝຶກອົບຮົມ<i class="hvr-icon material-icons right">arrow_drop_down</i></a></li>
-                        <li><a id="menu4" class="dropdown-trigger waves-effect waves-light right hvr-icon-hang black-text" data-target="dropdownItemData">ຈັດການຂໍ້ມູນ<i class="hvr-icon material-icons right">arrow_drop_down</i></a></li>
-                        <li><a id="menu5" class="dropdown-trigger waves-effect waves-light right hvr-icon-hang black-text" data-target="dropdownSurvey">ການປະເມີນ/ແບບສອບຖາມ<i class="hvr-icon material-icons right">arrow_drop_down</i></a></li>
-                        <li><a id="menu6" class="dropdown-trigger waves-effect waves-light right hvr-icon-hang black-text" data-target="dropdownReport">ສັງລວມບົດລາຍງານຕ່າງໆ<i class="hvr-icon material-icons right">arrow_drop_down</i></a></li>
+                        <li><a id="menu1" href="Main" class="waves-effect waves-teal"><i class="small material-icons black-text">home</i></a></li>
+                        <li><a id="menu2" href="YearPlans" class="waves-effect waves-teal black-text">ແຜນການຈັດຕັ້ງປະຕິບັດ</a></li>
+                        <li><a id="menu3" class="dropdown-trigger waves-effect waves-teal right hvr-icon-hang black-text" data-target="dropdownTraining">ການຈັດຝຶກອົບຮົມ<i class="hvr-icon material-icons right">arrow_drop_down</i></a></li>
+                        <li><a id="menu4" class="dropdown-trigger waves-effect waves-teal right hvr-icon-hang black-text" data-target="dropdownItemData">ຈັດການຂໍ້ມູນ<i class="hvr-icon material-icons right">arrow_drop_down</i></a></li>
+                        <li><a id="menu5" class="dropdown-trigger waves-effect waves-teal right hvr-icon-hang black-text" data-target="dropdownSurvey">ການປະເມີນ/ແບບສອບຖາມ<i class="hvr-icon material-icons right">arrow_drop_down</i></a></li>
+                        <li><a id="menu6" class="dropdown-trigger waves-effect waves-teal right hvr-icon-hang black-text" data-target="dropdownReport">ສັງລວມບົດລາຍງານຕ່າງໆ<i class="hvr-icon material-icons right">arrow_drop_down</i></a></li>
                     </ul>
                     <ul class="hide-on-med-and-down right">
                         <li><a class="dropdown-trigger right hvr-icon-hang" data-target="dropdownUser">&nbsp;&nbsp;&nbsp;
@@ -175,7 +244,7 @@
             <%-- dropdown --%>
             <ul id="dropdownTraining" class="dropdown-content">
                 <li><a href="Training" class="black-text">ສ້າງການຝຶກອົບຮົມ</a></li>
-                <li><a href="#!" class="black-text">ລາຍງານການຝຶກອົບຮົມ</a></li>
+                <li><a href="tcrpt01Viewer" class="black-text">ລາຍງານການຝຶກອົບຮົມ</a></li>
             </ul>
             <ul id="dropdownItemData" class="dropdown-content">
                 <li><a href="Trainees" class="black-text">ຂໍ້ມູນຜູ້ຝຶກອົບຮົມ</a></li>
@@ -185,7 +254,7 @@
             </ul>
             <ul id="dropdownSurvey" class="dropdown-content">
                 <li><a href="Evaluation" class="black-text">ສ້າງການປະເມີນ/ແບບສອບຖາມ</a></li>
-                <li><a href="#!" class="black-text">ລາຍງານສັງລວມການປະເມີນ/ແບບສອບຖາມ</a></li>
+                <li><a href="#!" class="black-text">ລາຍການແບບຟອມການປະເມີນ/ແບບສອບຖາມ</a></li>
             </ul>
             <ul id="dropdownReport" class="dropdown-content">
                 <li><a href="#!" class="black-text">ການຈັດຝຶກອົບຮົມໂດຍສະຖາບັນ</a></li>
@@ -196,7 +265,7 @@
                 <li><a href="UserProfile" class="modal-trigger black-text">ຂໍ້ມູນສ່ວນຕົວ</a></li>
                 <li><a href="#modal3" class="modal-trigger black-text" onclick="SetTxTUName()">ປ່ຽນລະຫັດຜ່ານ</a></li>
                 <li class="divider"></li>
-                <li><a class="waves-effect waves-light red-text" runat="server" onserverclick="btLogout_Click">ອອກຈາກລະບົບ</a></li>
+                <li><a class="waves-effect waves-teal red-text darken-3" runat="server" onserverclick="btLogout_Click">ອອກຈາກລະບົບ</a></li>
             </ul>
             <%-- dropdown --%>
 
@@ -205,45 +274,45 @@
                 <li>
                     <div class="user-view">
                         <div class="background">
-                            <img src="https://i.pinimg.com/736x/c6/12/d4/c612d46c62c61249462744f81100121c--co-working-industrial-office.jpg">
+                            <img src="https://image.freepik.com/free-photo/aerial-view-business-data-analysis-graph_53876-13390.jpg" width="600" height="400">
                         </div>
                         <a>
                             <img class="circle hvr-grow-shadow" runat="server" id="imgSidenavUserAvatar" src="img/man.png" width="150" height="150"></a>
                         <h5>
-                            <a href="UserProfile" class="waves-effect waves-light">
+                            <a href="UserProfile" class="waves-effect waves-teal">
                                 <span runat="server" id="lblUsername" class="white-text" style="font-size: 18px;"></span>
                             </a>
                         </h5>
                         <a><span id="lblPosition" runat="server" class="white-text" style="font-size: 22px;"></span></a>
-                        <a href="#" class="waves-effect waves-light white-text right hvr-grow-shadow" runat="server" onserverclick="btLogout_Click"><i class="material-icons">exit_to_app</i></a>
+                        <a href="#" class="waves-effect waves-teal white-text right hvr-grow-shadow" runat="server" onserverclick="btLogout_Click"><i class="material-icons">exit_to_app</i></a>
                     </div>
                 </li>
                 <ul class="collapsible expandable">
                     <li>
-                        <div class="collapsible-header waves-effect waves-light"><i class="material-icons">home</i><a href="Main" class="black-text">ຫນ້າຫລັກ</a></div>
+                        <div class="collapsible-header"><i class="material-icons">home</i><a href="Main" class="black-text">ຫນ້າຫລັກ</a></div>
                     </li>
                     <li>
-                        <div class="collapsible-header waves-effect waves-light"><i class="material-icons">event_note</i><a href="YearPlans" class="black-text">ແຜນການຈັດຕັ້ງປະຕິບັດ</a></div>
+                        <div class="collapsible-header"><i class="material-icons">event_note</i><a href="YearPlans" class="black-text">ແຜນການຈັດຕັ້ງປະຕິບັດ</a></div>
                     </li>
                     <li>
-                        <div class="collapsible-header waves-effect waves-light"><i class="material-icons">assignment</i>ການຈັດຝຶກອົບຮົມ</div>
+                        <div class="collapsible-header"><i class="material-icons">assignment</i>ການຈັດຝຶກອົບຮົມ</div>
                         <div class="collapsible-body"><a href="Training" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ສ້າງການຝຶກອົບຮົມ</a></div>
-                        <div class="collapsible-body"><a href="#!" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ລາຍງານການຝຶກອົບຮົມ</a></div>
+                        <div class="collapsible-body"><a href="tcrpt01Viewer" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ລາຍງານການຝຶກອົບຮົມ</a></div>
                     </li>
                     <li>
-                        <div class="collapsible-header waves-effect waves-light"><i class="material-icons">info</i>ຈັດການຂໍ້ມູນ</div>
+                        <div class="collapsible-header"><i class="material-icons">info</i>ຈັດການຂໍ້ມູນ</div>
                         <div class="collapsible-body"><a href="Trainees" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ຂໍ້ມູນຜູ້ຝຶກອົບຮົມ</a></div>
                         <div class="collapsible-body"><a href="Trainers" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ຂໍ້ມູນຄູຝຶກ</a></div>
                         <div class="collapsible-body"><a href="Course" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ຂໍ້ມູນຫລັກສູດ</a></div>
                         <div class="collapsible-body" id="navUser" runat="server"><a href="Users" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ຂໍ້ມູນບັນຊີຜູ້ໃຊ້</a></div>
                     </li>
                     <li>
-                        <div class="collapsible-header waves-effect waves-light"><i class="material-icons">poll</i>ການປະເມີນ/ແບບສອບຖາມ</div>
+                        <div class="collapsible-header"><i class="material-icons">poll</i>ການປະເມີນ/ແບບສອບຖາມ</div>
                         <div class="collapsible-body"><a href="Evaluation" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ສ້າງການປະເມີນ/ແບບສອບຖາມ</a></div>
-                        <div class="collapsible-body"><a href="#!" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ລາຍງານສັງລວມການປະເມີນ/ແບບສອບຖາມ</a></div>
+                        <div class="collapsible-body"><a href="#!" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ລາຍການແບບຟອມການປະເມີນ/ແບບສອບຖາມ</a></div>
                     </li>
                     <li>
-                        <div class="collapsible-header waves-effect waves-light"><i class="material-icons">note</i>ສັງລວມບົດລາຍງານຕ່າງໆ</div>
+                        <div class="collapsible-header"><i class="material-icons">note</i>ສັງລວມບົດລາຍງານຕ່າງໆ</div>
                         <div class="collapsible-body"><a href="#!" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ການຈັດຝຶກອົບຮົມໂດຍສະຖາບັນ</a></div>
                         <div class="collapsible-body"><a href="#!" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ການຈັດຝຶກອົບຮົມໂດຍພາກສ່ວນອື່ນ</a></div>
                         <div class="collapsible-body"><a href="#!" class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ການຖືກເຊີນໄປຂື້ນຫ້ອງໃຫ້ພາກສ່ວນອື່ນ</a></div>
@@ -256,7 +325,7 @@
 
         <%-- User Button --%>
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large red tooltipped sidenav-trigger" data-position="left" data-tooltip="ເມນູລັດ" data-target="mobile-demo">
+            <a class="btn-floating btn-large red darken-3 tooltipped sidenav-trigger" data-position="left" data-tooltip="ເມນູລັດ" data-target="mobile-demo">
                 <i class="large material-icons">menu</i>
             </a>
             <ul>
@@ -281,7 +350,7 @@
                     <div class="footer-copyright text-center py-3">
                         <p>
                             &copy; <%: DateTime.Now.Year %> - ພັດທະນາໂດຍ: 
-                            <a href="https://parti.moha.gov.la/">ສະຖາບັນຄົ້ນຄວ້າວິທະຍາສາດການປົກຄອງ ແລະ ຝຶກອົບຮົມ,​ ກະຊວງພາຍໃນ.</a>
+                            <a href="https://www.parti.gov.la/">ສະຖາບັນຄົ້ນຄວ້າວິທະຍາສາດການປົກຄອງ ແລະ ຝຶກອົບຮົມ,​ ກະຊວງພາຍໃນ.</a>
                         </p>
                     </div>
                 </footer>
@@ -326,7 +395,7 @@
         $(document).ready(function () {
             $('.modal').modal({
                 dismissible: false,
-                preventScrolling: true 	
+                preventScrolling: true
             });
             $('.dropdown-trigger').dropdown();
             $('input#<%: txtPWDNew1.ClientID %>, input#<%: txtPWDNew2.ClientID %>').characterCounter();
@@ -338,6 +407,10 @@
             });
             $('.waves-button-input').addClass('white-text');
             $('.fixed-action-btn').floatingActionButton();
+            $('.collapsible').collapsible({
+                inDuration: 50,
+                outDuration: 50
+            });
         });
 
         function ScrUp() {
@@ -415,8 +488,10 @@
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
-            var collapsibleElem = document.querySelector('.collapsible');
-            var collapsibleInstance = M.Collapsible.init(collapsibleElem);
+            $('.preloader-background').delay(1700).fadeOut('slow');
+            $('.preloader-wrapper')
+                .delay(1700)
+                .fadeOut();
         });
 
         function DisablebtnChgPWD() {
@@ -431,6 +506,6 @@
         }
 
     </script>
-
 </body>
+
 </html>

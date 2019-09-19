@@ -75,8 +75,8 @@
     <%-- Stepper --%>
     <div id="Stepper" runat="server" hidden>
         <ul class="stepper horizontal">
-            <li class="step" id="step1">
-                <div class="step-title waves-effect"></div>
+            <li class="step" id="step1" title="ຫົວຂໍ້">
+                <div class="step-title waves-effect">ຫົວຂໍ້</div>
                 <div class="step-content">
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
@@ -101,33 +101,36 @@
                                     <input type="radio" id="rdExternal" runat="server" class="with-gap" name="IntExt" value="ext" /><span>ເປັນການຈັດຕັ້ງໂດຍພາກສ່ວນພາຍນອກ.</span></label>
                             </div>
                         </div>
+                        <div class="input-field col s12 m12 l12">
+                            <label for="txtDescription">ລາຍລະອຽດພາກສ່ວນພາຍນອກ</label>
+                            <input type="text" class="validate" id="txtDescription" runat="server" />
+                            <span class="helper-text">ພາກສ່ວນພາຍນອກທີ່ເປັນເຈົ້າການໃນການຈັດຝຶກອົບຮົມ.</span>
+                        </div>
                     </div>
                     <div class="step-actions">
-                        <button type="button" class="waves-effect waves-light btn next-step laotxt" onclick="SetTrainingID()">ຂັ້ນຕໍ່ໄປ</button>
+                        <button id="btnFocused" type="button" class="waves-effect waves-light btn next-step laotxt z-depth-3" onclick="SetTrainingID()">ຂັ້ນຕໍ່ໄປ</button>
                     </div>
                 </div>
             </li>
-            <li class="step" id="step2">
-                <div class="step-title waves-effect"></div>
+            <li class="step" id="step2" title="ສະຖານທີ່ຈັດງານ">
+                <div class="step-title waves-effect">ສະຖານທີ່ຈັດງານ</div>
                 <div class="step-content">
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
-                            <div class="row">
-                                <div class="col s12 m4 l4">
-                                    <label for="txtTitle">ສະຖານທີ່ຈັດງານ</label>
-                                    <input type="text" id="txtTriAddre" runat="server" class="validate" required />
-                                    <span class="helper-text">ສະຖານທີ່ຈັດງານ: ສະຖາບັນຄົ້ນຄວ້າວິທະຍາສາດການປົກຄອງ ແລະ ຝຶກອົບຮົມ, ກະຊວງພາຍໃນ.</span>
-                                </div>
-                                <div class="col s12 m4 l4">
-                                    <label for="txtDistrict">ເມືອງ</label>
-                                    <input type="text" id="txtDistrict" runat="server" class="validate autocomplete" required autocomplete="off" />
-                                    <span class="helper-text">ເມືອງທີ່ໃຊ້ຈັດງານ.</span>
-                                </div>
-                                <div class="col s12 m4 l4">
-                                    <label for="txtProvince">ແຂວງ</label>
-                                    <input type="text" id="txtProvince" runat="server" class="validate autocomplete" required autocomplete="off" />
-                                    <span class="helper-text">ແຂວງທີ່ໃຊ້ຈັດງານ.</span>
-                                </div>
+                            <label for="txtTitle">ສະຖານທີ່ຈັດງານ</label>
+                            <input type="text" id="txtTriAddre" runat="server" class="validate" required />
+                            <span class="helper-text">ສະຖານທີ່ຈັດງານ: ສະຖາບັນຄົ້ນຄວ້າວິທະຍາສາດການປົກຄອງ ແລະ ຝຶກອົບຮົມ, ກະຊວງພາຍໃນ.</span>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <label for="txtDistrict">ເມືອງ</label>
+                                <input type="text" id="txtDistrict" runat="server" class="validate autocomplete" required autocomplete="off" />
+                                <span class="helper-text">ເມືອງທີ່ໃຊ້ຈັດງານ.</span>
+                            </div>
+                            <div class=" input-field col s12 m6 l6">
+                                <label for="txtProvince">ແຂວງ</label>
+                                <input type="text" id="txtProvince" runat="server" class="validate autocomplete" required autocomplete="off" />
+                                <span class="helper-text">ແຂວງທີ່ໃຊ້ຈັດງານ.</span>
                             </div>
                         </div>
                         <div class="input-field col s12 m12 l12">
@@ -136,19 +139,19 @@
                             <span class="helper-text" data-error="ສະເພາະຕົວເລກ." data-success="ສະເພາະຕົວເລກ.">ສະເພາະຕົວເລກ.</span>
                         </div>
                         <div class="input-field col s12 m12 l12">
-                            <input type="text" class="datepicker validate" id="dtpDate" runat="server" required />
+                            <input type="text" class="datepicker validate" id="dtpDate" runat="server" required placeholder="YYYY-MM-DD" />
                             <label for="dtpDate">ວັນທີ່ເລີ່ມຈັດງານ</label>
                             <span class="helper-text" data-error="ສະເພາະວັນທີ." data-success="ວັນທີ່ເລີ່ມຈັດງານ.">ວັນທີ່ເລີ່ມຈັດງານ.</span>
                         </div>
                     </div>
                     <div class="step-actions">
-                        <button type="button" class="waves-effect waves-light btn next-step laotxt" onclick="InsertTraining()">ຂັ້ນຕໍ່ໄປ</button>
-                        <button type="button" class="waves-effect waves-light btn-flat previous-step laotxt">ກັບຄືນ</button>
+                        <button type="button" class="waves-effect waves-light btn next-step laotxt z-depth-3" onclick="InsertTraining()">ຂັ້ນຕໍ່ໄປ</button>
+                        <button type="button" class="waves-effect waves-light btn-flat previous-step laotxt z-depth-3">ກັບຄືນ</button>
                     </div>
                 </div>
             </li>
-            <li class="step active" id="step3">
-                <div class="step-title waves-effect"></div>
+            <li class="step active" id="step3" title="ຄູຝຶກ">
+                <div class="step-title waves-effect">ຄູຝຶກ</div>
                 <div class="step-content">
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
@@ -190,13 +193,13 @@
                         </div>
                     </div>
                     <div class="step-actions">
-                        <button type="button" class="waves-effect waves-light btn next-step laotxt">ຂັ້ນຕໍ່ໄປ</button>
-                        <button type="button" class="waves-effect waves-light btn-flat previous-step laotxt">ກັບຄືນ</button>
+                        <button type="button" class="waves-effect waves-light btn next-step laotxt z-depth-3" onclick="swalToast('info', 'ຂັ້ນຕອນຕໍ່ໄປເລືອກຜູ້ເຂົ້າຮ່ວມ')">ຂັ້ນຕໍ່ໄປ</button>
+                        <button type="button" class="waves-effect waves-light btn-flat previous-step laotxt z-depth-3">ກັບຄືນ</button>
                     </div>
                 </div>
             </li>
-            <li class="step" id="step4">
-                <div class="step-title waves-effect"></div>
+            <li class="step" id="step4" title="ຜູ້ເຂົ້າຮ່ວມຝຶກອົບຮົມ">
+                <div class="step-title waves-effect">ຜູ້ເຂົ້າຮ່ວມຝຶກອົບຮົມ</div>
                 <div class="step-content">
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
@@ -226,9 +229,9 @@
                         </div>
                     </div>
                     <div class="step-actions">
-                        <button type="button" class="waves-effect waves-light btn laotxt" onclick="Complete()">ບັນທຶກ</button>
+                        <button type="button" class="waves-effect waves-light btn laotxt z-depth-3" onclick="Complete()">ບັນທຶກ</button>
                         <input type="hidden" runat="server" id="txtTrainingID" />
-                        <button type="button" class="waves-effect waves-light btn-flat previous-step laotxt">ກັບຄືນ</button>
+                        <button type="button" class="waves-effect waves-light btn-flat previous-step laotxt z-depth-3">ກັບຄືນ</button>
                     </div>
                 </div>
             </li>
@@ -324,7 +327,7 @@
         });
 
         function SearchTrainer(txt) {
-            $('.trTrainer:not(:contains("' + txt + '"))').hide('slow');
+            $('.trTrainer:not(:contains("' + txt + '"))').hide('500');
             $('.trTrainer:contains("' + txt + '")').show();
             $('.some-list').simpleLoadMore({
                 item: 'tr',
@@ -334,7 +337,7 @@
         }
 
         function SearchTrainee(txt) {
-            $('.trTrainee:not(:contains("' + txt + '"))').hide('slow');
+            $('.trTrainee:not(:contains("' + txt + '"))').hide('500');
             $('.trTrainee:contains("' + txt + '")').show();
             $('.some-list').simpleLoadMore({
                 item: 'tr',
@@ -352,10 +355,10 @@
         }
 
         function Search() {
-            $('#<%: Stepper.ClientID %>').hide('slow');
+            $('#<%: Stepper.ClientID %>').hide();
             var txt = document.getElementById('<%: txtSearch.ClientID %>').value;
             var index = $('.card:contains("' + txt + '")').index();
-            $('.card:not(:contains("' + txt + '"))').hide('slow');
+            $('.card:not(:contains("' + txt + '"))').hide('500');
             $('.card:contains("' + txt + '")').show();
             $('.some-list').simpleLoadMore({
                 item: 'tr',
@@ -379,8 +382,9 @@
             let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
             var training_district = document.getElementById('<%: txtDistrict.ClientID %>').value;
             var training_province = document.getElementById('<%: txtProvince.ClientID %>').value;
-            
-            SetTraining(action, id, title, course_id, int_or_ext, training_address, training_district, training_province, training_days, training_date, '', formatted_date);
+            var description = document.getElementById('<%: txtDescription.ClientID %>').value;
+
+            SetTraining(action, id, title, course_id, int_or_ext, training_address, training_district, training_province, training_days, training_date, description, formatted_date);
         }
 
         function SetTraining(action, id, title, course_id, int_or_ext, training_address, training_district, training_province,
@@ -394,7 +398,7 @@
                     "', training_address:'" + training_address + "', training_district:'" + training_district + "', training_province:'" + training_province +
                     "', training_days:'" + training_days + "', training_date:'" + training_date + "', description:'" + description + "', date_of_modified_data:'" + date_of_modified_data + "'}",
                 success: function (response) {
-                    
+                    swalToast('success', response.d);
                 },
                 failure: function (response) {
                     swalModal('error', response.d, '');
@@ -446,7 +450,7 @@
                 cancelButtonText: 'No'
             }).then((result) => {
                 if (result.value) {
-                    SetTraining('del', id, '', '', '', '', '','', '', training_date, '', '');
+                    SetTraining('del', id, '', '', '', '', '', '', '', training_date, '', '');
                     SetTrainerForTraining('del', '', '', id);
                     SetTraineeForTraining('del', '', '', id);
                     window.location.reload();
@@ -455,11 +459,11 @@
         }
 
         function SetTrainingInfo(id, training_id) {
-            $('#<%: Stepper.ClientID %>').show('slow');
+            ClearTXT();
+            $('#<%: Stepper.ClientID %>').show();
             $('html, body').animate({
                 scrollTop: $('#<%: Stepper.ClientID %>').offset().top
             }, 'slow');
-            ClearTXT();
             if (id == "-1") {
                 document.getElementById('<%: txtTrainingID.ClientID %>').name = "add";
             } else {
@@ -473,12 +477,14 @@
                     success: function (response) {
                         var obj = response.d;
                         document.getElementById('<%: txtTrainingID.ClientID %>').value = obj.id;
+                        //alert(obj.id);
                         document.getElementById('<%: txtTitle.ClientID %>').value = obj.title;
                         document.getElementById('<%: txtTriAddre.ClientID %>').value = obj.training_address;
                         document.getElementById('<%: txtTridays.ClientID %>').value = obj.training_days;
                         document.getElementById('<%: dtpDate.ClientID %>').value = obj.training_date;
                         document.getElementById('<%: txtDistrict.ClientID %>').value = obj.training_district;
                         document.getElementById('<%: txtProvince.ClientID %>').value = obj.training_province;
+                        document.getElementById('<%: txtDescription.ClientID %>').value = obj.description;
                         if (obj.int_or_ext == 'int') {
                             $('#<%: rdInternal.ClientID %>').prop('checked', true);
                             $('#<%: rdExternal.ClientID %>').prop('checked', false);
@@ -537,11 +543,11 @@
 
         function SetSelect(who, id) {
             if (who == 'Tner') {
-                $('tr[id*="1Tner"]:has(input[value="' + id + '"])').hide('slow');
-                $('tr[id*="2Tner"]:has(input[value="' + id + '"])').show('slow');
+                $('tr[id*="1Tner"]:has(input[value="' + id + '"])').hide('500');
+                $('tr[id*="2Tner"]:has(input[value="' + id + '"])').show('500');
             } else if (who == 'Tnee') {
-                $('tr[id*="1Tnee"]:has(input[value="' + id + '"])').hide('slow');
-                $('tr[id*="2Tnee"]:has(input[value="' + id + '"])').show('slow');
+                $('tr[id*="1Tnee"]:has(input[value="' + id + '"])').hide('500');
+                $('tr[id*="2Tnee"]:has(input[value="' + id + '"])').show('500');
             }
         }
 
@@ -552,6 +558,7 @@
             document.getElementById('<%: dtpDate.ClientID %>').value = '';
             document.getElementById('<%: txtTrainingID.ClientID %>').value = '';
             document.getElementById('<%: txtTrainingID.ClientID %>').name = '';
+            document.getElementById('<%: txtDescription.ClientID %>').value = '';
             $("#<%: selCourseID.ClientID %>").val('');
             $('tr[id*="2Tner"]').hide();
             $('tr[id*="2Tnee"]').hide();
@@ -578,7 +585,9 @@
         function SetTrainingID() {
             var uuid = UUID();
             var status = document.getElementById('<%: txtTrainingID.ClientID %>').name;
-            if (status == 'add') {
+            var tid = document.getElementById('<%: txtTrainingID.ClientID %>').value;
+            //alert(status + ' | ' + tid);
+            if (status == 'add' && tid == '') {
                 document.getElementById('<%: txtTrainingID.ClientID %>').value = uuid;
             }
         }
@@ -590,11 +599,55 @@
             var trainerid = document.getElementById('i' + idHid).value;
             if (idHid.includes('Tner')) {
                 SetTrainerForTraining('add', '0', trainerid, trainingid);
+                $(tner1).hide('500');
+                $(tner2).show('500');
             } else if (idHid.includes('Tnee')) {
-                SetTraineeForTraining('add', '0', trainerid, trainingid);
+                var courseID = $("#<%: selCourseID.ClientID %>").val();
+                var _id;
+                var _trainee_id;
+                var _course_id;
+                var _course_name;
+                var _title;
+                var _training_address;
+                var _training_date;
+                var _code;
+
+                $.ajax({
+                    async: false,
+                    type: "POST",
+                    url: "<%: ResolveUrl("Training.aspx/checkTraineeForTrainings") %>",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: "{trainee_id:'" + trainerid + "', course_id:'" + courseID + "'}",
+                    success: function (response) {
+                        var obj = response.d;
+                        $.each(obj,
+                            function (key, value) {
+                                _id = value.id;
+                                _trainee_id = value.trainee_id;
+                                _course_id = value.course_id;
+                                _course_name = value.course_name;
+                                _title = value.title;
+                                _training_address = value.training_address;
+                                _training_date = value.training_date;
+                                _code = value.code;
+                            });
+                    },
+                    failure: function (response) {
+                        swalModal('error', response.d, '');
+                    }
+                });
+
+                var msg = "<div class='left'><h6>ບຸກຄົນນີ້ແມ່ນເຄີຍຜ່ານການອົບຮົມໃນຫຼັກສູດນີ້ແລ້ວ!</h6><br />ຫົວຂໍ້: " + _title + "<br />ຫຼັກສູດ: " + _course_name + "<br />ສະຖານທີ: " + _training_address + "<br />ວັນທີຈັດງານ: " + _training_date + "<br />code: e3</div>";
+
+                if (_code == 'e3') {
+                    swalModal('error', msg, '');
+                } else {
+                    SetTraineeForTraining('add', '0', trainerid, trainingid);
+                    $(tner1).hide('500');
+                    $(tner2).show('500');
+                }
             }
-            $(tner1).hide('slow');
-            $(tner2).show('slow');
         }
 
         function Disselect(idHid, idSho) {
@@ -607,8 +660,8 @@
             } else if (idHid.includes('Tnee')) {
                 SetTraineeForTraining('del', '0', trainerid, trainingid);
             }
-            $(tner1).show('slow');
-            $(tner2).hide('slow');
+            $(tner1).show('500');
+            $(tner2).hide('500');
         }
 
     </script>

@@ -23,7 +23,7 @@ namespace parti.admin.wcf.parti {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
@@ -92,6 +92,26 @@ namespace parti.admin.wcf.parti {
         private System.Threading.SendOrPostCallback GetVillageOperationCompleted;
         
         private System.Threading.SendOrPostCallback EditExperienceOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetTrainingExperienceOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetExperienceOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetTrainingExperience_TrainerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CheckTraineeForTrainingOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetQTitleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetQQuestionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetQAnswerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback EditUAnswerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetUAnswerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetTrainingRPT01OperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -226,6 +246,36 @@ namespace parti.admin.wcf.parti {
         
         /// <remarks/>
         public event EditExperienceCompletedEventHandler EditExperienceCompleted;
+        
+        /// <remarks/>
+        public event GetTrainingExperienceCompletedEventHandler GetTrainingExperienceCompleted;
+        
+        /// <remarks/>
+        public event GetExperienceCompletedEventHandler GetExperienceCompleted;
+        
+        /// <remarks/>
+        public event GetTrainingExperience_TrainerCompletedEventHandler GetTrainingExperience_TrainerCompleted;
+        
+        /// <remarks/>
+        public event CheckTraineeForTrainingCompletedEventHandler CheckTraineeForTrainingCompleted;
+        
+        /// <remarks/>
+        public event GetQTitleCompletedEventHandler GetQTitleCompleted;
+        
+        /// <remarks/>
+        public event GetQQuestionCompletedEventHandler GetQQuestionCompleted;
+        
+        /// <remarks/>
+        public event GetQAnswerCompletedEventHandler GetQAnswerCompleted;
+        
+        /// <remarks/>
+        public event EditUAnswerCompletedEventHandler EditUAnswerCompleted;
+        
+        /// <remarks/>
+        public event GetUAnswerCompletedEventHandler GetUAnswerCompleted;
+        
+        /// <remarks/>
+        public event GetTrainingRPT01CompletedEventHandler GetTrainingRPT01Completed;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetAuthen", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1166,24 +1216,25 @@ namespace parti.admin.wcf.parti {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/EditQTitle", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string EditQTitle([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string action, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string title_name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string training_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string created_date, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string date_of_modified_data) {
+        public string EditQTitle([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string action, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string title_name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string training_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string created_date, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string q_type, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string date_of_modified_data) {
             object[] results = this.Invoke("EditQTitle", new object[] {
                         action,
                         t_id,
                         title_name,
                         training_id,
                         created_date,
+                        q_type,
                         date_of_modified_data});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void EditQTitleAsync(string action, string t_id, string title_name, string training_id, string created_date, string date_of_modified_data) {
-            this.EditQTitleAsync(action, t_id, title_name, training_id, created_date, date_of_modified_data, null);
+        public void EditQTitleAsync(string action, string t_id, string title_name, string training_id, string created_date, string q_type, string date_of_modified_data) {
+            this.EditQTitleAsync(action, t_id, title_name, training_id, created_date, q_type, date_of_modified_data, null);
         }
         
         /// <remarks/>
-        public void EditQTitleAsync(string action, string t_id, string title_name, string training_id, string created_date, string date_of_modified_data, object userState) {
+        public void EditQTitleAsync(string action, string t_id, string title_name, string training_id, string created_date, string q_type, string date_of_modified_data, object userState) {
             if ((this.EditQTitleOperationCompleted == null)) {
                 this.EditQTitleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEditQTitleOperationCompleted);
             }
@@ -1193,6 +1244,7 @@ namespace parti.admin.wcf.parti {
                         title_name,
                         training_id,
                         created_date,
+                        q_type,
                         date_of_modified_data}, this.EditQTitleOperationCompleted, userState);
         }
         
@@ -1496,22 +1548,24 @@ namespace parti.admin.wcf.parti {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetVillage", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string GetVillage() {
-            object[] results = this.Invoke("GetVillage", new object[0]);
+        public string GetVillage([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string v_name) {
+            object[] results = this.Invoke("GetVillage", new object[] {
+                        v_name});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void GetVillageAsync() {
-            this.GetVillageAsync(null);
+        public void GetVillageAsync(string v_name) {
+            this.GetVillageAsync(v_name, null);
         }
         
         /// <remarks/>
-        public void GetVillageAsync(object userState) {
+        public void GetVillageAsync(string v_name, object userState) {
             if ((this.GetVillageOperationCompleted == null)) {
                 this.GetVillageOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetVillageOperationCompleted);
             }
-            this.InvokeAsync("GetVillage", new object[0], this.GetVillageOperationCompleted, userState);
+            this.InvokeAsync("GetVillage", new object[] {
+                        v_name}, this.GetVillageOperationCompleted, userState);
         }
         
         private void OnGetVillageOperationCompleted(object arg) {
@@ -1562,6 +1616,326 @@ namespace parti.admin.wcf.parti {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetTrainingExperience", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetTrainingExperience([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string trainee_id) {
+            object[] results = this.Invoke("GetTrainingExperience", new object[] {
+                        trainee_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetTrainingExperienceAsync(string trainee_id) {
+            this.GetTrainingExperienceAsync(trainee_id, null);
+        }
+        
+        /// <remarks/>
+        public void GetTrainingExperienceAsync(string trainee_id, object userState) {
+            if ((this.GetTrainingExperienceOperationCompleted == null)) {
+                this.GetTrainingExperienceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTrainingExperienceOperationCompleted);
+            }
+            this.InvokeAsync("GetTrainingExperience", new object[] {
+                        trainee_id}, this.GetTrainingExperienceOperationCompleted, userState);
+        }
+        
+        private void OnGetTrainingExperienceOperationCompleted(object arg) {
+            if ((this.GetTrainingExperienceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetTrainingExperienceCompleted(this, new GetTrainingExperienceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetExperience", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetExperience([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string exper_id) {
+            object[] results = this.Invoke("GetExperience", new object[] {
+                        exper_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetExperienceAsync(string exper_id) {
+            this.GetExperienceAsync(exper_id, null);
+        }
+        
+        /// <remarks/>
+        public void GetExperienceAsync(string exper_id, object userState) {
+            if ((this.GetExperienceOperationCompleted == null)) {
+                this.GetExperienceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetExperienceOperationCompleted);
+            }
+            this.InvokeAsync("GetExperience", new object[] {
+                        exper_id}, this.GetExperienceOperationCompleted, userState);
+        }
+        
+        private void OnGetExperienceOperationCompleted(object arg) {
+            if ((this.GetExperienceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetExperienceCompleted(this, new GetExperienceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetTrainingExperience_Trainer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetTrainingExperience_Trainer([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string trainer_id) {
+            object[] results = this.Invoke("GetTrainingExperience_Trainer", new object[] {
+                        trainer_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetTrainingExperience_TrainerAsync(string trainer_id) {
+            this.GetTrainingExperience_TrainerAsync(trainer_id, null);
+        }
+        
+        /// <remarks/>
+        public void GetTrainingExperience_TrainerAsync(string trainer_id, object userState) {
+            if ((this.GetTrainingExperience_TrainerOperationCompleted == null)) {
+                this.GetTrainingExperience_TrainerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTrainingExperience_TrainerOperationCompleted);
+            }
+            this.InvokeAsync("GetTrainingExperience_Trainer", new object[] {
+                        trainer_id}, this.GetTrainingExperience_TrainerOperationCompleted, userState);
+        }
+        
+        private void OnGetTrainingExperience_TrainerOperationCompleted(object arg) {
+            if ((this.GetTrainingExperience_TrainerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetTrainingExperience_TrainerCompleted(this, new GetTrainingExperience_TrainerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/CheckTraineeForTraining", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string CheckTraineeForTraining([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string trainee_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string training_id) {
+            object[] results = this.Invoke("CheckTraineeForTraining", new object[] {
+                        trainee_id,
+                        training_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CheckTraineeForTrainingAsync(string trainee_id, string training_id) {
+            this.CheckTraineeForTrainingAsync(trainee_id, training_id, null);
+        }
+        
+        /// <remarks/>
+        public void CheckTraineeForTrainingAsync(string trainee_id, string training_id, object userState) {
+            if ((this.CheckTraineeForTrainingOperationCompleted == null)) {
+                this.CheckTraineeForTrainingOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckTraineeForTrainingOperationCompleted);
+            }
+            this.InvokeAsync("CheckTraineeForTraining", new object[] {
+                        trainee_id,
+                        training_id}, this.CheckTraineeForTrainingOperationCompleted, userState);
+        }
+        
+        private void OnCheckTraineeForTrainingOperationCompleted(object arg) {
+            if ((this.CheckTraineeForTrainingCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CheckTraineeForTrainingCompleted(this, new CheckTraineeForTrainingCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetQTitle", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetQTitle([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_id) {
+            object[] results = this.Invoke("GetQTitle", new object[] {
+                        t_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetQTitleAsync(string t_id) {
+            this.GetQTitleAsync(t_id, null);
+        }
+        
+        /// <remarks/>
+        public void GetQTitleAsync(string t_id, object userState) {
+            if ((this.GetQTitleOperationCompleted == null)) {
+                this.GetQTitleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetQTitleOperationCompleted);
+            }
+            this.InvokeAsync("GetQTitle", new object[] {
+                        t_id}, this.GetQTitleOperationCompleted, userState);
+        }
+        
+        private void OnGetQTitleOperationCompleted(object arg) {
+            if ((this.GetQTitleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetQTitleCompleted(this, new GetQTitleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetQQuestion", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetQQuestion([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_id) {
+            object[] results = this.Invoke("GetQQuestion", new object[] {
+                        t_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetQQuestionAsync(string t_id) {
+            this.GetQQuestionAsync(t_id, null);
+        }
+        
+        /// <remarks/>
+        public void GetQQuestionAsync(string t_id, object userState) {
+            if ((this.GetQQuestionOperationCompleted == null)) {
+                this.GetQQuestionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetQQuestionOperationCompleted);
+            }
+            this.InvokeAsync("GetQQuestion", new object[] {
+                        t_id}, this.GetQQuestionOperationCompleted, userState);
+        }
+        
+        private void OnGetQQuestionOperationCompleted(object arg) {
+            if ((this.GetQQuestionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetQQuestionCompleted(this, new GetQQuestionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetQAnswer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetQAnswer([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string q_id) {
+            object[] results = this.Invoke("GetQAnswer", new object[] {
+                        t_id,
+                        q_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetQAnswerAsync(string t_id, string q_id) {
+            this.GetQAnswerAsync(t_id, q_id, null);
+        }
+        
+        /// <remarks/>
+        public void GetQAnswerAsync(string t_id, string q_id, object userState) {
+            if ((this.GetQAnswerOperationCompleted == null)) {
+                this.GetQAnswerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetQAnswerOperationCompleted);
+            }
+            this.InvokeAsync("GetQAnswer", new object[] {
+                        t_id,
+                        q_id}, this.GetQAnswerOperationCompleted, userState);
+        }
+        
+        private void OnGetQAnswerOperationCompleted(object arg) {
+            if ((this.GetQAnswerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetQAnswerCompleted(this, new GetQAnswerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/EditUAnswer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string EditUAnswer([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string action, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string u_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string q_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string a_id) {
+            object[] results = this.Invoke("EditUAnswer", new object[] {
+                        action,
+                        u_id,
+                        t_id,
+                        q_id,
+                        a_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void EditUAnswerAsync(string action, string u_id, string t_id, string q_id, string a_id) {
+            this.EditUAnswerAsync(action, u_id, t_id, q_id, a_id, null);
+        }
+        
+        /// <remarks/>
+        public void EditUAnswerAsync(string action, string u_id, string t_id, string q_id, string a_id, object userState) {
+            if ((this.EditUAnswerOperationCompleted == null)) {
+                this.EditUAnswerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEditUAnswerOperationCompleted);
+            }
+            this.InvokeAsync("EditUAnswer", new object[] {
+                        action,
+                        u_id,
+                        t_id,
+                        q_id,
+                        a_id}, this.EditUAnswerOperationCompleted, userState);
+        }
+        
+        private void OnEditUAnswerOperationCompleted(object arg) {
+            if ((this.EditUAnswerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.EditUAnswerCompleted(this, new EditUAnswerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetUAnswer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetUAnswer([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string u_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string q_id) {
+            object[] results = this.Invoke("GetUAnswer", new object[] {
+                        u_id,
+                        t_id,
+                        q_id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetUAnswerAsync(string u_id, string t_id, string q_id) {
+            this.GetUAnswerAsync(u_id, t_id, q_id, null);
+        }
+        
+        /// <remarks/>
+        public void GetUAnswerAsync(string u_id, string t_id, string q_id, object userState) {
+            if ((this.GetUAnswerOperationCompleted == null)) {
+                this.GetUAnswerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetUAnswerOperationCompleted);
+            }
+            this.InvokeAsync("GetUAnswer", new object[] {
+                        u_id,
+                        t_id,
+                        q_id}, this.GetUAnswerOperationCompleted, userState);
+        }
+        
+        private void OnGetUAnswerOperationCompleted(object arg) {
+            if ((this.GetUAnswerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetUAnswerCompleted(this, new GetUAnswerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetTrainingRPT01", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetTrainingRPT01([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string int_or_ext, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_date_s, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string t_date_e) {
+            object[] results = this.Invoke("GetTrainingRPT01", new object[] {
+                        int_or_ext,
+                        t_date_s,
+                        t_date_e});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetTrainingRPT01Async(string int_or_ext, string t_date_s, string t_date_e) {
+            this.GetTrainingRPT01Async(int_or_ext, t_date_s, t_date_e, null);
+        }
+        
+        /// <remarks/>
+        public void GetTrainingRPT01Async(string int_or_ext, string t_date_s, string t_date_e, object userState) {
+            if ((this.GetTrainingRPT01OperationCompleted == null)) {
+                this.GetTrainingRPT01OperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTrainingRPT01OperationCompleted);
+            }
+            this.InvokeAsync("GetTrainingRPT01", new object[] {
+                        int_or_ext,
+                        t_date_s,
+                        t_date_e}, this.GetTrainingRPT01OperationCompleted, userState);
+        }
+        
+        private void OnGetTrainingRPT01OperationCompleted(object arg) {
+            if ((this.GetTrainingRPT01Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetTrainingRPT01Completed(this, new GetTrainingRPT01CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -1581,7 +1955,7 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1628,11 +2002,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetAuthenCompletedEventHandler(object sender, GetAuthenCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetAuthenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1654,11 +2028,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void SumYearlyCourseCompletedEventHandler(object sender, SumYearlyCourseCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SumYearlyCourseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1680,11 +2054,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetUsersCompletedEventHandler(object sender, GetUsersCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetUsersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1706,11 +2080,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetCourseCompletedEventHandler(object sender, GetCourseCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetCourseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1732,11 +2106,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditUsersCompletedEventHandler(object sender, EditUsersCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditUsersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1758,11 +2132,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditCourseCompletedEventHandler(object sender, EditCourseCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditCourseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1784,11 +2158,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetTrainerListCompletedEventHandler(object sender, GetTrainerListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetTrainerListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1810,11 +2184,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditTrainerCompletedEventHandler(object sender, EditTrainerCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditTrainerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1836,11 +2210,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetDataUsingDataContractCompletedEventHandler(object sender, GetDataUsingDataContractCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataUsingDataContractCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1862,11 +2236,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetTraineeListCompletedEventHandler(object sender, GetTraineeListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetTraineeListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1888,11 +2262,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditTraineeCompletedEventHandler(object sender, EditTraineeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditTraineeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1914,11 +2288,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetTrainingListCompletedEventHandler(object sender, GetTrainingListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetTrainingListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1940,11 +2314,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetTraineeByTrainingCompletedEventHandler(object sender, GetTraineeByTrainingCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetTraineeByTrainingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1966,11 +2340,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetTrainerByTrainingCompletedEventHandler(object sender, GetTrainerByTrainingCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetTrainerByTrainingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1992,11 +2366,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditTrainingsCompletedEventHandler(object sender, EditTrainingsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditTrainingsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2018,11 +2392,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditTraineeForTrainingsCompletedEventHandler(object sender, EditTraineeForTrainingsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditTraineeForTrainingsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2044,11 +2418,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditTrainerForTrainingsCompletedEventHandler(object sender, EditTrainerForTrainingsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditTrainerForTrainingsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2070,11 +2444,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetYearPlansCompletedEventHandler(object sender, GetYearPlansCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetYearPlansCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2096,11 +2470,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditYearPlansCompletedEventHandler(object sender, EditYearPlansCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditYearPlansCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2122,11 +2496,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetCompareYearPlanCompletedEventHandler(object sender, GetCompareYearPlanCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetCompareYearPlanCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2148,11 +2522,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetTrainingIdNamesCompletedEventHandler(object sender, GetTrainingIdNamesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetTrainingIdNamesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2174,11 +2548,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditQTitleCompletedEventHandler(object sender, EditQTitleCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditQTitleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2200,11 +2574,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditQuestionsCompletedEventHandler(object sender, EditQuestionsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditQuestionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2226,11 +2600,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditQAnswersCompletedEventHandler(object sender, EditQAnswersCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditQAnswersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2252,11 +2626,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetQuestionCompletedEventHandler(object sender, GetQuestionCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetQuestionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2278,11 +2652,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetAnswerCompletedEventHandler(object sender, GetAnswerCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetAnswerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2304,11 +2678,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetDistrictCompletedEventHandler(object sender, GetDistrictCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDistrictCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2330,11 +2704,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetProvinceCompletedEventHandler(object sender, GetProvinceCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetProvinceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2356,11 +2730,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditEducationCompletedEventHandler(object sender, EditEducationCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditEducationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2382,11 +2756,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditApprovalCompletedEventHandler(object sender, EditApprovalCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2408,11 +2782,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void GetVillageCompletedEventHandler(object sender, GetVillageCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetVillageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2434,11 +2808,11 @@ namespace parti.admin.wcf.parti {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void EditExperienceCompletedEventHandler(object sender, EditExperienceCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EditExperienceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -2446,6 +2820,266 @@ namespace parti.admin.wcf.parti {
         private object[] results;
         
         internal EditExperienceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetTrainingExperienceCompletedEventHandler(object sender, GetTrainingExperienceCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTrainingExperienceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTrainingExperienceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetExperienceCompletedEventHandler(object sender, GetExperienceCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetExperienceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetExperienceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetTrainingExperience_TrainerCompletedEventHandler(object sender, GetTrainingExperience_TrainerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTrainingExperience_TrainerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTrainingExperience_TrainerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void CheckTraineeForTrainingCompletedEventHandler(object sender, CheckTraineeForTrainingCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CheckTraineeForTrainingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CheckTraineeForTrainingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetQTitleCompletedEventHandler(object sender, GetQTitleCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetQTitleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetQTitleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetQQuestionCompletedEventHandler(object sender, GetQQuestionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetQQuestionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetQQuestionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetQAnswerCompletedEventHandler(object sender, GetQAnswerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetQAnswerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetQAnswerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void EditUAnswerCompletedEventHandler(object sender, EditUAnswerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class EditUAnswerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal EditUAnswerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetUAnswerCompletedEventHandler(object sender, GetUAnswerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetUAnswerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetUAnswerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetTrainingRPT01CompletedEventHandler(object sender, GetTrainingRPT01CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTrainingRPT01CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTrainingRPT01CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

@@ -377,6 +377,7 @@
         <xs:element minOccurs="0" name="title_name" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="training_id" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="created_date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="q_type" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="date_of_modified_data" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -525,7 +526,9 @@
   </xs:element>
   <xs:element name="GetVillage">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="v_name" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetVillageResponse">
@@ -551,6 +554,156 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="EditExperienceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrainingExperience">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trainee_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrainingExperienceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTrainingExperienceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExperience">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="exper_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExperienceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetExperienceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrainingExperience_Trainer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trainer_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrainingExperience_TrainerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTrainingExperience_TrainerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckTraineeForTraining">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trainee_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="training_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckTraineeForTrainingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckTraineeForTrainingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQTitle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="t_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetQTitleResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQQuestion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="t_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQQuestionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetQQuestionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQAnswer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="t_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="q_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQAnswerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetQAnswerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditUAnswer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="action" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="u_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="t_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="q_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="a_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditUAnswerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditUAnswerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUAnswer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="u_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="t_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="q_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUAnswerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUAnswerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrainingRPT01">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="int_or_ext" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="t_date_s" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="t_date_e" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrainingRPT01Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTrainingRPT01Result" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
